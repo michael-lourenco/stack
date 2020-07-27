@@ -30,6 +30,15 @@ app.use(express.json())
  * Request Body: Corpo da reeuisição, usaro para criar ou alterar recurso
  */
 
+ /**
+  * Bancos de dados
+  * 
+  * SQL
+  * NoSql
+  * 
+  * usaremos Knex para auxiliar e o bd SqLite
+  */
+
 app.get("/users",(request, response)=>{
     return response.json({
         evento:"Semana PmniStack 11.0",
