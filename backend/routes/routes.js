@@ -5,12 +5,11 @@ const connection = require('../src/database/connection')
 
 const routes = express.Router()
 
-routes.get("/users",(request, response)=>{
-    return response.json({
-        evento:"Semana PmniStack 11.0",
-        aluno:"Michael Lourenço",
-        teste:"sem parâmetros"
-    })
+routes.get("/ongs", async (request, response)=>{
+    const ongs= await connection('ongs').select('*');
+
+    return response.json(ongs);
+
 })
 
 //Exempĺo query params ( se acessa por request.query)
