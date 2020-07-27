@@ -1,9 +1,14 @@
-const express = require('express')
+const express=require('express')
 
-const app = express()
+const routes = express.Router()
 
-//informar que usaremos JSON no corpo das requisições
-app.use(express.json())
+routes.get("/users",(request, response)=>{
+    return response.json({
+        evento:"Semana PmniStack 11.0",
+        aluno:"Michael Lourenço",
+        teste:"sem parâmetros"
+    })
+})
 
 /*
 * Rota / Recurso
@@ -38,17 +43,9 @@ app.use(express.json())
   * 
   * usaremos Knex para auxiliar e o bd SqLite
   */
-
-app.get("/users",(request, response)=>{
-    return response.json({
-        evento:"Semana PmniStack 11.0",
-        aluno:"Michael Lourenço",
-        teste:"sem parâmetros"
-    })
-})
-
+ 
 //Exempĺo query params ( se acessa por request.query)
-app.get("/users-query",(request, response)=>{
+routes.get("/users-query",(request, response)=>{
     const params = request.query;
     console.log(params)
     return response.json({
@@ -57,7 +54,7 @@ app.get("/users-query",(request, response)=>{
 })
 
 //Exempo rout params ( se acessa por request.params)
-app.get("/users/:id",(request, response)=>{
+routes.get("/users/:id",(request, response)=>{
     const params = request.params
     
     return response.json({
@@ -66,7 +63,7 @@ app.get("/users/:id",(request, response)=>{
 })
 
 //Exemplo request body ( se acessa por request.body)
-app.post("/users",(request, response)=>{
+routes.post("/users",(request, response)=>{
     const body=request.body
 
     console.log(body)
@@ -76,4 +73,4 @@ app.post("/users",(request, response)=>{
     })
 })
 
-app.listen(3333)
+module.exports = routes;
