@@ -1,4 +1,5 @@
 const express=require('express')
+const crypto=require('crypto')
 
 const routes = express.Router()
 
@@ -43,7 +44,7 @@ routes.get("/users",(request, response)=>{
   * 
   * usaremos Knex para auxiliar e o bd SqLite
   */
- 
+
 //Exempĺo query params ( se acessa por request.query)
 routes.get("/users-query",(request, response)=>{
     const params = request.query;
@@ -63,13 +64,16 @@ routes.get("/users/:id",(request, response)=>{
 })
 
 //Exemplo request body ( se acessa por request.body)
-routes.post("/users",(request, response)=>{
-    const body=request.body
+routes.post("/ongs",(request, response)=>{
+    const {name, email, whatsapp, city, uf}=request.body
 
-    console.log(body)
+    const id=crypto.randomBytes(4).toString('HEX')
+
+    console.log(name)
 
     return response.json({
-        body
+        name, 
+        email
     })
 })
 
