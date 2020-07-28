@@ -10,6 +10,7 @@ https://www.youtube.com/watch?v=tjZEplICR5g
 
 /*
 * Rota / Recurso
+* Express
 * Exemplo de Rota: http://localhost:3333/users/
 * Exemplo de Recurso: /users
 **/
@@ -40,4 +41,22 @@ https://www.youtube.com/watch?v=tjZEplICR5g
   * NoSql
   * 
   * usaremos Knex para auxiliar e o bd SqLite
+  */
+
+ //FRONT END
+  /* ROTEAR LINKS
+  *
+  * import { Link } from 'react-router-dom'
+  */
+  
+   /**
+  * ICONES 
+  * 
+  * import { FiArrowLeft } from 'react-icons/fi' (ou outro final se quiser utilizar outro repositório de icones)
+  */
+  
+   /**
+  * ENVIO E RECEBIMENDO DE DADOS (services)
+  * 
+  * AXIOS
   */
