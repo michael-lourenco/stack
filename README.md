@@ -93,3 +93,41 @@ https://www.youtube.com/watch?v=tjZEplICR5g
 * EX:
 * localStorage.clear();
 **/
+
+// REACT NATIVE E EXPO
+
+/**
+* ICONES
+* EX:
+* import {Feather} from '@expo/vector-icons'
+**/
+
+/**
+* NAVEGAR PELAS TELAS 
+*
+* semelhante ao useHistory do react js
+* EX:
+* import { useNavigation } from '@react-navigation/native'
+**/
+
+/**
+* ENVIAR EMAIL COM EXPO 
+*
+* expo install expo-mail-composer
+* EX:
+* import * as MailComposer from 'expo-mail-composer'
+* a forma de importação acima foi utilizada, pois o expo-mail-composer exporta vários métodos sem um default, trazemos todo ele e colocamos numa variavel MailComposer
+**/
+/**
+* PARA ACESSAR OUTRAS TECNOLOGIAS PELO CELULAR
+*
+* DEEP LINKING
+* acessa um aplicativo do celular atraves de um endereço ( tipo uma url )
+* EX:
+* import {Lining} from 'react-native'
+*
+* da pra chamar junto com outras funcionalidades do react native
+* EX:
+* import { Image,Linking, Text, TouchableOpacity, View } from 'react-native'
+*
+**/
