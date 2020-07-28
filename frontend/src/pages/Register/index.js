@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { FiArrowLeft } from 'react-icons/fi'
 import './styles.css'
 
@@ -9,14 +9,18 @@ import logoImg from '../../assets/logo.svg'
 
 
 export default function Register(){
+
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [whatsapp, setWahtsapp] = useState('');
     const [city, setCity] = useState('');
     const [uf, setUf] = useState('');
 
+    const history = useHistory()
+
     async function handleRegister(event){
-        event.preventDefault()
+        event.preventDefault()//impede o comportamento padrão do formulário carreguar a página 
+
 
         const data={
             name,
@@ -25,15 +29,24 @@ export default function Register(){
             city,
             uf,
         }
+
         try{
+            
             const response = await api.post('ongs', data)
 
             alert(`Seu id de acesso:${response.data.id}`)
+
+            //voltar a rota indicada abaixo com o useHistory( no caso a raiz)
+            history.push('/')
+
         }catch(err){
+            
             alert('Erro no cadatro, tente novamente')
+        
         }
 
     }
+
     return (
         <div className="register-container">
             <div className="content">
