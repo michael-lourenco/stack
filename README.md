@@ -108,7 +108,19 @@ https://www.youtube.com/watch?v=tjZEplICR5g
 * semelhante ao useHistory do react js
 * EX:
 * import { useNavigation } from '@react-navigation/native'
+* 
 **/
+
+/**
+* RECEBER INFORMAÇÕES DA TELA ATUAL
+*
+* useRoute
+*
+* EX:
+* import { useNavigation, useRoute } from '@react-navigation/native'
+**/
+
+
 
 /**
 * ENVIAR EMAIL COM EXPO 
@@ -130,4 +142,16 @@ https://www.youtube.com/watch?v=tjZEplICR5g
 * EX:
 * import { Image,Linking, Text, TouchableOpacity, View } from 'react-native'
 *
+**/
+
+/**
+* INSTALAR INTL
+*
+* No androi não tem a funionalidade de usar o intl pra formatar informações como currency
+* pra suprir esta falta basta instalar e utilizar o intl
+* npm install intl
+* ADICIONAR NO App.js, pois este arquivo enxerga toda a aplicação
+*
+* import 'intl'
+* import 'intl/locale-data/jsonp/pt-BR'
 **/
